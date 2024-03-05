@@ -6,20 +6,24 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectRepository(User) private userRepository: Repository<User>,
+    @InjectRepository(User) private usersRepository: Repository<User>,
   ) {}
 
-  findAll() {
-    return this.userRepository.find();
+  findAll(email: string) {
+    return this.usersRepository.find({
+      where: {
+        email,
+      },
+    });
   }
 
   create(name: string, email: string, password: string) {
-    const user = this.userRepository.create({ name, email, password });
-    return this.userRepository.save(user);
+    const user = this.usersRepository.create({ name, email, password });
+    return this.usersRepository.save(user);
   }
 
   findOneBy(id: number) {
-    return this.userRepository.findOneBy({ id });
+    return this.usersRepository.findOneBy({ id });
   }
 
   async update(id: number, attrs: Partial<User>) {
@@ -28,7 +32,7 @@ export class UsersService {
       throw new NotFoundException(`User with id ${id} not found`);
     }
     Object.assign(user, attrs);
-    return this.userRepository.save(user);
+    return this.usersRepository.save(user);
   }
 
   async remove(id: number) {
@@ -36,6 +40,6 @@ export class UsersService {
     if (!user) {
       throw new NotFoundException(`User with id ${id} not found`);
     }
-    return this.userRepository.remove(user);
+    return this.usersRepository.remove(user);
   }
 }
