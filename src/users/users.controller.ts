@@ -22,7 +22,6 @@ export class UsersController {
   @UseInterceptors(SerializeInterceptor)
   @Get()
   findAllUsers(@Query('email') email: string) {
-    console.log('I am running on handler')
     return this.usersService.findAll(email);
   }
 
