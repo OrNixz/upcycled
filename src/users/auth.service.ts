@@ -17,7 +17,9 @@ export class AuthService {
 
     const salt = randomBytes(8).toString('hex');
     const hash = (await scrypt(password, salt, 64)) as Buffer;
-    const result = salt + '.' + hash.toString('hex');
-    
+    const hashedPassword = salt + '.' + hash.toString('hex');
+
+    const user = await this.userService.create(name, email, hashedPassword);
+    return user;
   }
 }
