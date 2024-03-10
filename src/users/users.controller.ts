@@ -68,6 +68,11 @@ export class UsersController {
     return user;
   }
 
+  @Post('/logout')
+  logout(@Session() session: any) {
+    session.userId = null;
+  }
+
   @Get('/auth/whoami')
   async whoAmI(@Session() session: any) {
     const user = await this.usersService.findOneBy(session.userId);
