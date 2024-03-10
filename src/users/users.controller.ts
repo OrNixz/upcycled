@@ -25,16 +25,6 @@ export class UsersController {
     private authService: AuthService,
   ) {}
 
-  @Get('/pet/:pet')
-  setPet(@Param('pet') pet: string, @Session() session: any) {
-    session.pet = pet;
-  }
-
-  @Get('/pet')
-  getPet(@Session() session: any) {
-    return session.pet;
-  }
-
   @Get()
   findAllUsers(@Query('email') email: string) {
     return this.usersService.findAll(email);
@@ -61,12 +51,26 @@ export class UsersController {
   }
 
   @Post('/register')
-  register(@Body() body: CreateUserDto) {
-    return this.authService.register(body.name, body.email, body.password);
+  async register(@Body() body: CreateUserDto, @Session() session: any) {
+    const user = await this.authService.register(
+      body.name,
+      body.email,
+      body.password,
+    );
+    session.userId = user.id;
+    return user;
   }
 
   @Post('/login')
-  login(@Body() body: LoginUserDto) {
-    return this.authService.login(body.email, body.password);
+  async login(@Body() body: LoginUserDto, @Session() session: any) {
+    const user = await this.authService.login(body.email, body.password);
+    session.userId = user.id;
+    return user;
+  }
+
+  @Get('/auth/whoami')
+  async whoAmI(@Session() session: any) {
+    const user = await this.usersService.findOneBy(session.userId);
+    return user
   }
 }
