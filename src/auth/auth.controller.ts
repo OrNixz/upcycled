@@ -5,6 +5,7 @@ import { LoginUserDto } from './dtos/login-user-dto';
 import { UsersService } from 'src/users/users.service';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
 import { UserDto } from 'src/users/dtos/user.dto';
+import { CurrentUser } from './decorators/current-user.decorator';
 
 @Controller('auth')
 @Serialize(UserDto)
@@ -38,8 +39,7 @@ export class AuthController {
   }
 
   @Get('/whoami')
-  async whoAmI(@Session() session: any) {
-    const user = await this.usersService.findOneBy(session.userId);
+  async whoAmI(@CurrentUser() user: string) {
     return user;
   }
 }
