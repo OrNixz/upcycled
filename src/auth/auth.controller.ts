@@ -39,7 +39,7 @@ export class AuthController {
   }
 
   @Get('/whoami')
-  async whoAmI(@CurrentUser() user: string) {
+  whoAmI(@CurrentUser() user: string) {
     return user;
   }
 }
