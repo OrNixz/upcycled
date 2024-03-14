@@ -56,4 +56,10 @@ describe('AuthService', () => {
       service.register('John Doe', 'johndoe@gmail.com', 'password'),
     ).rejects.toThrow('Email in use');
   });
+
+  it('should throw an error if user logged in with invalid email', async () => {
+    await expect(service.login('admin@gmail.com', 'password')).rejects.toThrow(
+      'User not found',
+    );
+  });
 });
