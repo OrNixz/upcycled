@@ -62,4 +62,38 @@ describe('AuthService', () => {
       'User not found',
     );
   });
+
+  it('should throw an error if user logged in with invalid password', async () => {
+    fakeUsersService.findAll = () => {
+      return Promise.resolve([
+        {
+          id: 1,
+          name: 'John Doe',
+          email: 'johndoe@gmail.com',
+          password: 'password',
+        } as User,
+      ]);
+    };
+
+    await expect(
+      service.login('johndoe@gmail.com', 'password'),
+    ).rejects.toThrow('Invalid password');
+  });
+
+  it('should return a user if correct email and password are provided', async () => {
+    fakeUsersService.findAll = () => {
+      return Promise.resolve([
+        {
+          id: 1,
+          name: 'John Doe',
+          email: 'johndoe@gmail.com',
+          password:
+            '7f524d3ec017487f.99e6a9469e0351ad562af8a876f40b996d93542659d3da7591e7a06cc590a7b15e88432dcbca53ffc3a63c439792f62d359ec966ce0fa14fdd5f720e3fa70713',
+        } as User,
+      ]);
+    };
+
+    const user = await service.login('johndoe@gmail.com', 'password');
+    expect(user).toBeDefined();
+  });
 });
