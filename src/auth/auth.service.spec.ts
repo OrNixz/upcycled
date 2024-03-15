@@ -24,8 +24,6 @@ describe('AuthService', () => {
         } as User;
 
         users.push(user);
-        // console.log(users)
-        console.log(user);
         return Promise.resolve(user);
       },
     };
@@ -57,16 +55,7 @@ describe('AuthService', () => {
   });
 
   it('should throw an error if the email is in use', async () => {
-    fakeUsersService.findAll = () => {
-      return Promise.resolve([
-        {
-          id: 1,
-          name: 'John Doe',
-          email: 'johndoe@gmail.com',
-          password: 'password',
-        } as User,
-      ]);
-    };
+    await service.register('John Doe', 'johndoe@gmail.com', 'password');
     await expect(
       service.register('John Doe', 'johndoe@gmail.com', 'password'),
     ).rejects.toThrow('Email in use');
@@ -79,17 +68,7 @@ describe('AuthService', () => {
   });
 
   it('should throw an error if user logged in with invalid password', async () => {
-    fakeUsersService.findAll = () => {
-      return Promise.resolve([
-        {
-          id: 1,
-          name: 'John Doe',
-          email: 'johndoe@gmail.com',
-          password: 'password',
-        } as User,
-      ]);
-    };
-
+    await service.register('John Doe', 'johndoe@gmail.com', 'test123');
     await expect(
       service.login('johndoe@gmail.com', 'password'),
     ).rejects.toThrow('Invalid password');
