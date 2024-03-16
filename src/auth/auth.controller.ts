@@ -1,8 +1,14 @@
-import { Body, Controller, Get, Post, Session, UseInterceptors } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Session,
+  UseInterceptors,
+} from '@nestjs/common';
 import { CreateUserDto } from '../users/dtos/create-user.dto';
 import { AuthService } from './auth.service';
 import { LoginUserDto } from './dtos/login-user-dto';
-import { UsersService } from '../users/users.service';
 import { Serialize } from '../interceptors/serialize.interceptor';
 import { UserDto } from '../users/dtos/user.dto';
 import { CurrentUser } from './decorators/current-user.decorator';
@@ -13,10 +19,7 @@ import { User } from '../users/user.entity';
 @Serialize(UserDto)
 @UseInterceptors(CurrentUserInterceptor)
 export class AuthController {
-  constructor(
-    private authService: AuthService,
-    private usersService: UsersService,
-  ) {}
+  constructor(private authService: AuthService) {}
 
   @Post('/register')
   async register(@Body() body: CreateUserDto, @Session() session: any) {
