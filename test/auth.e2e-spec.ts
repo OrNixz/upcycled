@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from '../src/app.module';
+import { AppModule } from './../src/app.module';
+import { setupApp } from '../src/setup-app';
 
 describe('Auth Controller (e2e)', () => {
   let app: INestApplication;
@@ -12,6 +13,7 @@ describe('Auth Controller (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    setupApp(app);
     await app.init();
   });
 
@@ -19,15 +21,15 @@ describe('Auth Controller (e2e)', () => {
     return request(app.getHttpServer())
       .post('/auth/register')
       .send({
-        name: 'ichigo',
-        email: 'ichigo@gmail.com',
+        name: 'rukia', 
+        email: 'rukia@gmail.com',
         password: 'password',
       })
       .expect(201)
       .then(({ body }: request.Response) => {
         expect(body.id).toBeDefined();
-        expect(body.name).toBe('ichigo');
-        expect(body.email).toBe('ichigo@gmail.com');
+        expect(body.name).toBe('rukia');
+        expect(body.email).toBe('rukia@gmail.com');
       });
   });
 });
