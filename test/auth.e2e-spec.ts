@@ -21,7 +21,7 @@ describe('Auth Controller (e2e)', () => {
     return request(app.getHttpServer())
       .post('/auth/register')
       .send({
-        name: 'toshiro', 
+        name: 'toshiro',
         email: 'toshiro@gmail.com',
         password: 'password',
       })
@@ -31,5 +31,26 @@ describe('Auth Controller (e2e)', () => {
         expect(body.name).toBe('toshiro');
         expect(body.email).toBe('toshiro@gmail.com');
       });
+  });
+
+  it('/auth/login (POST)', async () => {
+    const email = 'aizen@gmail.com';
+
+    const response = await request(app.getHttpServer())
+      .post('/auth/register')
+      .send({
+        name: 'aizen',
+        email,
+        password: 'password',
+      })
+      .expect(201);
+
+    const cookie = response.get('Set-Cookie');
+    const { body } = await request(app.getHttpServer())
+      .get('/auth/whoami')
+      .set('Cookie', cookie)
+      .expect(200);
+
+      expect(body.email).toEqual(email);
   });
 });
