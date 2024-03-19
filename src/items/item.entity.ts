@@ -21,6 +21,9 @@ export class Item {
   @Column()
   category: string;
 
+  @Column({ default: false })
+  approved: boolean;
+
   @ManyToOne(() => User, (user) => user.items)
-  user: User
+  user: User;
 }
