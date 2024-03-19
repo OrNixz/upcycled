@@ -28,6 +28,6 @@ export class ItemsController {
 
   @Patch('/:id')
   approveItem(@Param('id') id: string, @Body() body: ApproveItemDto) {
-    return this.itemsService.approveItem(id, body);
+    return this.itemsService.approveItem(parseInt(id), body.approved);
   }
 }
