@@ -1,4 +1,4 @@
-import { NestMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware } from '@nestjs/common';
 import { UsersService } from '../../users/users.service';
 import { NextFunction, Request, Response } from 'express';
 import { User } from '../../users/user.entity';
@@ -11,6 +11,7 @@ declare global {
   }
 }
 
+@Injectable()
 export class CurrentUserMiddleware implements NestMiddleware {
   constructor(private usersService: UsersService) {}
 
