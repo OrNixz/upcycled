@@ -25,7 +25,7 @@ export class ItemsController {
 
   @Get()
   getAllItems(@Query() query: QueryItemDto) {
-    console.log(query);
+    return this.itemsService.getAllItems(query);
   }
 
   @Post()
