@@ -19,6 +19,9 @@ export class ItemDto {
   @Expose()
   category: string;
 
+  @Expose()
+  year: string;
+
   @Transform(({ obj }) => obj.user.id)
   @Expose()
   userId: number;

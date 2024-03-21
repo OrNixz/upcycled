@@ -21,6 +21,9 @@ export class Item {
   @Column()
   category: string;
 
+  @Column()
+  year: string;
+
   @Column({ default: false })
   approved: boolean;
 

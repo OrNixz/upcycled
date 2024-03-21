@@ -16,4 +16,7 @@ export class CreateItemDto {
 
   @IsString()
   category: string;
+
+  @IsString()
+  year: string;
 }
