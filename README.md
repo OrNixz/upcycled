@@ -22,15 +22,22 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Description 📖
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This NestJS application provides a robust foundation for building a second-hand marketplace platform.
 
-## Installation
+## Features 🚀
 
-```bash
-$ npm install
-```
+### User Management:
+- Users can register with email and password for secure account creation.
+- Login functionality allows users to access their accounts and interact with the marketplace.
+
+### Item Management:
+- Users can advertise items they wish to sell, providing detailed descriptions and relevant information.
+- Users can view all advertised items, allowing them to browse the marketplace for potential purchases.
+  
+### Admin Approval:
+- An admin role oversees item approval, ensuring the quality and legitimacy of items listed on the marketplace.
 
 ## Running the app
 
