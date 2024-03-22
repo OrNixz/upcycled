@@ -17,6 +17,14 @@ export class ItemsService {
       .createQueryBuilder()
       .select('*')
       .where('approved = :approved', { approved: true })
+      .andWhere('name LIKE :name', { name: `%${queryItemDto.name}%` })
+      .andWhere('category LIKE :category', {
+        category: `%${queryItemDto.category}%`,
+      })
+      .andWhere('location LIKE :location', {
+        location: `%${queryItemDto.location}%`,
+      })
+      .andWhere('year LIKE :year', { year: `%${queryItemDto.year}%` })
       .getRawMany();
   }
 
