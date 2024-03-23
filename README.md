@@ -1,3 +1,4 @@
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
@@ -39,31 +40,61 @@ This NestJS application provides a robust foundation for building a second-hand 
 ### Admin Approval:
 - An admin role oversees item approval, ensuring the quality and legitimacy of items listed on the marketplace.
 
+## Installation
+
+```bash
+1. Clone the repository: 
+https://github.com/OrNixz/upcycled.git
+
+2. Navigate to the project directory: 
+cd your-project-name
+
+3. Install dependencies: 
+$ npm install
+```
+
 ## Running the app
 
 ```bash
-# development
+# Development
 $ npm run start
 
-# watch mode
+# Watch mode
 $ npm run start:dev
 
-# production mode
+# Production mode
 $ npm run start:prod
 ```
 
 ## Test
 
 ```bash
-# unit tests
+# Unit tests
 $ npm run test
 
-# e2e tests
+# E2e tests
 $ npm run test:e2e
 
-# test coverage
+# Test coverage
 $ npm run test:cov
 ```
+
+## API Endpoints
+
+| Name     | Method | URL            | Body/Query String                                           | Description                             |
+|----------|--------|----------------|-------------------------------------------------------------|-----------------------------------------|
+| register | POST   | /auth/register | Body - {name, email, password}                              | Create a new user data                  |
+| login    | POST   | /auth/login    | Body - {email, password}                                    | Validate data with existing users       |
+| logout   | POST   | /auth/logout   | -                                                           | Terminates user session                 |
+| whoami   | GET    | /auth/whoami   | -                                                           | Provides information about current user |
+| item     | GET    | /items         | Query String - {name, location, category, year}             | Display list of secondhand items        |
+| item     | POST   | /items         | Body - {name, description, price, location, category, year} | Create a new secondhand item            |
+| item     | PATCH  | /items         | Body - {approved}                                           | Approve or reject an item from the user |
+| user     | GET    | /users         | Query String - {email} (optional)                           | Display list of registered users        |
+| user     | POST   | /users         | Body - {name, email, password}                              | Create a new user data (deprecated)     |
+| user     | GET    | /users/:id     | -                                                           | Display a specific user based on the ID |
+| user     | PATCH  | /users/:id     | Body - {name, email, password} (optional)                   | Update user data information            |
+| user     | DELETE | /users/:id     | -                                                           | Remove user data information            |
 
 ## Support
 
@@ -78,3 +109,6 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+
