@@ -96,6 +96,86 @@ $ npm run test:cov
 | user     | PATCH  | /users/:id     | Body - {name, email, password} (optional)                   | Update user data information            |
 | user     | DELETE | /users/:id     | -                                                           | Remove user data information            |
 
+## Images
+<details>
+    <summary>Click to see!</summary>
+
+  ### 1. Modules
+    
+  - Overview
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/overview.png)
+
+  - App module
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/app-module.png)
+
+  - Auth module
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/auth-module.png)
+
+  - Users module
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/users-module.png)
+
+  ### 2. Register
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/register.png)
+
+  ### 3. Login
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/login.png)
+
+  ### 4. Logout
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/logout.png)
+
+  ### 5. Whoami
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/whoami.png)
+
+  ### 6. Get users
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/get-users.png)
+
+  ### 7. Get user (With query params)
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/get-user-with-query-params.png)
+
+  ### 8. Get user (Based on user ID)
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/get-user-based-on-id.png)
+
+  ### 9. Add user
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/post-user.png)
+
+  ### 10. Update user
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/update-user.png)
+
+  ### 11. Delete user
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/delete-user.png)
+
+  ### 12. Add item
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/post-item.png)
+
+  ### 13. Approve item by admin
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/item-approved.png)
+
+  ### 14. Get items
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/get-items.png)
+
+  ### 15. Get item (With query params)
+
+  ![](https://github.com/OrNixz/upcycled/blob/main/images/get-item-with-query-params.png)
+
+</details>
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
