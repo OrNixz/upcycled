@@ -5,7 +5,7 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications. </p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
@@ -24,7 +24,7 @@
 
 ## Description 📖
 
-This NestJS application provides a robust foundation for building a second-hand marketplace platform.
+This NestJS application provides a robust foundation for building a second-hand marketplace platform. Utilizing TypeORM as the Object Data Mapper (ODM) and SQLite as the database, this project enables developers to easily develop and manage large-scale second-hand marketplace applications.
 
 ## Features 🚀
 
@@ -39,12 +39,12 @@ This NestJS application provides a robust foundation for building a second-hand 
 ### Admin Approval:
 - An admin role oversees item approval, ensuring the quality and legitimacy of items listed on the marketplace.
 
-## Prerequisites
+## Prerequisites 🛠️
 Before you start, make sure you have the following prerequisites in place:
 1. Ensure you have [Node.js](https://nodejs.org/) and [NPM](https://www.npmjs.com/) installed in your system.
 2. NestJS CLI. Install it globally by typing this command: `npm install -g @nestjs/cli`
 
-## Installation
+## Installation 📥
 
 ```bash
 1. Clone the repository: 
@@ -57,7 +57,7 @@ cd your-project-name
 $ npm install
 ```
 
-## Running the app
+## Running the app ▶️
 
 ```bash
 # Development
@@ -70,7 +70,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Test 🧪
 
 ```bash
 # Unit tests
@@ -83,7 +83,7 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## API Endpoints
+## API Endpoints 🛤️
 
 | Name     | Method | URL            | Body/Query String                                           | Description                             |
 |----------|--------|----------------|-------------------------------------------------------------|-----------------------------------------|
@@ -100,7 +100,7 @@ $ npm run test:cov
 | user     | PATCH  | /users/:id     | Body - {name, email, password} (optional)                   | Update user data information            |
 | user     | DELETE | /users/:id     | -                                                           | Remove user data information            |
 
-## Images
+## Images 📷
 <details>
     <summary>Click to see!</summary>
 
@@ -180,17 +180,24 @@ $ npm run test:cov
 
 </details>
 
-## Support
+## Support 🤝
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+## Stay in touch 📬
 
+### Nest Author
 - Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
+### Project Author
+- Author - [Afif Ramadhan](https://www.linkedin.com/in/afiframadhan27/)
+
+## Credits 🙌
+This project was inspired by the **Learn to Master Nest.js** course on the Full-Stack Javascript roadmap, with a slight distinction and additional styling that suits my style. Shout out to the creator who made this project [@lunadiotic](https://github.com/lunadiotic)
+
+## License 📝
 
 Nest is [MIT licensed](LICENSE).
 
