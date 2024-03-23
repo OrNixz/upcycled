@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
@@ -39,6 +38,11 @@ This NestJS application provides a robust foundation for building a second-hand 
   
 ### Admin Approval:
 - An admin role oversees item approval, ensuring the quality and legitimacy of items listed on the marketplace.
+
+## Prerequisites
+Before you start, make sure you have the following prerequisites in place:
+1. Ensure you have [Node.js](https://nodejs.org/) and [NPM](https://www.npmjs.com/) installed in your system.
+2. NestJS CLI. Install it globally by typing this command: `npm install -g @nestjs/cli`
 
 ## Installation
 
